@@ -1,0 +1,136 @@
+@charset "UTF-8";
+// mixin
+@mixin calc-fontsize($size, $displaysize) {
+    font-size: $size / $displaysize * 100vw;
+}
+@mixin tab {
+    @media (min-width: ($bp)) {
+        @content;
+    }
+}
+@mixin pc {
+    @media (min-width: ($body-width)) {
+        @content;
+    }
+}
+@mixin clearfix{
+    content: '';
+    visibility: hidden;
+    clear: both;
+    height: 0;
+    display: block;
+}
+@mixin object-fit-height{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: auto;
+    max-width: 9999px;
+    height: 100%;
+}
+@mixin flex{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+// 変数
+// Font
+$base-font: serif;
+$gothic-font: sans-serif;
+
+// サイズ
+$body-width-sp: 640px;
+$body-width: 1200px;
+$bp: 768px;
+
+$base-fontsize: 20px;
+
+// Color
+$main-color: #000000;
+$link-color: #000000;
+$effect-color: #d7a763;
+$title-color: #a40000;
+$title-green-color: #005752;
+$border-color: #bfbfbf;
+
+
+body{
+    width: 100%;
+    max-width: $body-width-sp;
+    margin: 0 auto;
+    font-family: $base-font;
+    @include calc-fontsize($base-fontsize, $body-width-sp);
+    line-height : 1.5;
+    color: $main-color;
+    letter-spacing: 1px;
+    @include tab{
+        @include calc-fontsize($base-fontsize, $body-width);
+        max-width: $body-width;
+    }
+    @include pc{
+        font-size: $base-fontsize;
+    }
+}
+
+a{
+    color: $link-color;
+    text-decoration: none;
+    &:hover{
+        filter: alpha(opacity=60);
+        opacity: 0.6;
+        text-decoration: none;
+        -webkit-transition: 0.5s ease-in-out;
+        -moz-transition: 0.5s ease-in-out;
+        -o-transition: 0.5s ease-in-out;
+        transition: 0.5s ease-in-out;
+    }
+    &:visited{
+        text-decoration: none;
+    }
+    @include tab{
+        &[href^="tel:"]{
+            pointer-events: none;
+            cursor: default;
+            color:$link-color;
+            text-decoration: none;
+        }
+    }
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+ul{
+    list-style: none;
+}
+
+.visible-phone{
+    display: inherit;
+}
+.hidden-phone{
+    display: none;
+}
+@media screen and (min-width: $bp){
+    .visible-phone{
+        display: none;
+    }
+    .hidden-phone{
+        display: inherit;
+    }
+}
+
+
+address{
+    font-size: 10px;
+    text-align: center;
+    font-style: normal;
+}
