@@ -1,0 +1,58 @@
+// mixin
+@mixin calc-fontsize($size, $displaysize) {
+    font-size: $size / $displaysize * 100vw;
+}
+@mixin tab {
+    @media (min-width: ($bp)) {
+        @content;
+    }
+}
+@mixin pc {
+    @media (min-width: ($body-width)) {
+        @content;
+    }
+}
+@mixin clearfix{
+    content: '';
+    visibility: hidden;
+    clear: both;
+    height: 0;
+    display: block;
+}
+@mixin object-fit-height{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: auto;
+    max-width: 9999px;
+    height: 100%;
+}
+@mixin flex{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+// 変数
+// Font
+$base-font: serif !default;
+$gothic-font: sans-serif !default;
+
+// サイズ
+$body-width-sp: 640px !default;
+$body-width: 1200px !default;
+$bp: 768px !default;
+
+$base-fontsize: 16px !default;
+
+// Color
+$main-color: #000000;
+$link-color: #000000;
+$title-color: #a40000;
+$border-color: #bfbfbf;

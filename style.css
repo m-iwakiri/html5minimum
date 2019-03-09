@@ -1,0 +1,83 @@
+body {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  font-family: serif;
+  font-size: 2.5vw;
+  line-height: 1.5;
+  color: #000000;
+  letter-spacing: 1px;
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 1.33333vw;
+    max-width: 1200px;
+  }
+}
+
+@media (min-width: 1200px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+a {
+  color: #000000;
+  text-decoration: none;
+}
+
+a:hover {
+  filter: alpha(opacity=60);
+  opacity: 0.6;
+  text-decoration: none;
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  a[href^="tel:"] {
+    pointer-events: none;
+    cursor: default;
+    color: #000000;
+    text-decoration: none;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+}
+
+.visible-phone {
+  display: inherit;
+}
+
+.hidden-phone {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .visible-phone {
+    display: none;
+  }
+  .hidden-phone {
+    display: inherit;
+  }
+}
+
+address {
+  font-size: 10px;
+  text-align: center;
+  font-style: normal;
+}

@@ -1,0 +1,20 @@
+{
+  "name": "html5minimum",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-style.css": "node-sass style.scss style.css -w --output-style expanded",
+    "build-base.css": "node-sass _base.scss base.css -w --output-style expanded"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://m-iwakiri@github.com/m-iwakiri/html5minimum.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/m-iwakiri/html5minimum/issues"
+  },
+  "homepage": "https://github.com/m-iwakiri/html5minimum#readme"
+}
